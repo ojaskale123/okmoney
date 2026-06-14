@@ -1,0 +1,221 @@
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: var(--color-background-primary); color: var(--color-text-primary); }
+
+  .hero { background: #0a0a0a; color: white; padding: 3rem 1.5rem 2.5rem; text-align: center; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 14px; font-size: 12px; margin-bottom: 1rem; color: #aaa; letter-spacing: 0.04em; }
+  .logo { font-size: 32px; font-weight: 500; color: white; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+  .logo span { color: #4ade80; }
+  .hero h1 { font-size: 26px; font-weight: 500; color: white; line-height: 1.35; margin-bottom: 0.75rem; }
+  .hero p { font-size: 15px; color: #999; margin-bottom: 1.75rem; line-height: 1.6; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; border-radius: 10px; padding: 13px 28px; font-size: 15px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; }
+  .stats-row { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem; border-top: 0.5px solid rgba(255,255,255,0.1); }
+  .stat .num { font-size: 22px; font-weight: 500; color: #4ade80; }
+  .stat .lbl { font-size: 12px; color: #666; margin-top: 3px; }
+
+  .section { padding: 2.5rem 1.5rem; }
+  .section-tag { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .section h2 { font-size: 21px; font-weight: 500; margin-bottom: 0.5rem; }
+  .section .sub { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1.5rem; }
+
+  .ss-scroll { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .ss-scroll::-webkit-scrollbar { display: none; }
+  .ss-item { flex-shrink: 0; width: 220px; border-radius: 10px; overflow: hidden; border: 0.5px solid var(--color-border-tertiary); }
+  .ss-item img { width: 100%; display: block; }
+  .ss-label { font-size: 12px; padding: 8px 10px; color: var(--color-text-secondary); background: var(--color-background-secondary); }
+
+  .features-bg { background: var(--color-background-secondary); }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; margin-top: 1.25rem; }
+  .feat { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+  .feat-icon { font-size: 20px; color: #16a34a; margin-bottom: 8px; }
+  .feat h3 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .feat p { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  .problems-bg { background: var(--color-background-primary); }
+  .prob-list { display: flex; flex-direction: column; gap: 9px; margin-top: 1.25rem; }
+  .prob-item { display: flex; gap: 10px; font-size: 14px; color: var(--color-text-secondary); align-items: flex-start; }
+  .prob-item .ic { font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+  .ic-bad { color: #ef4444; }
+  .ic-good { color: #22c55e; }
+
+  .testimonials-bg { background: var(--color-background-secondary); }
+  .tcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-top: 1rem; }
+  .tcard p { font-size: 14px; color: var(--color-text-primary); line-height: 1.65; font-style: italic; }
+  .tmeta { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .tav { width: 34px; height: 34px; border-radius: 50%; background: #dcfce7; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: #16a34a; flex-shrink: 0; }
+  .tname { font-size: 13px; font-weight: 500; }
+  .tshop { font-size: 12px; color: var(--color-text-secondary); }
+
+  .cta-section { background: #0a0a0a; color: white; text-align: center; padding: 3rem 1.5rem; }
+  .cta-section h2 { font-size: 23px; font-weight: 500; color: white; margin-bottom: 0.5rem; }
+  .cta-section p { color: #888; font-size: 14px; margin-bottom: 1.75rem; }
+  .cta-note { font-size: 12px; color: #555; margin-top: 1rem; }
+
+  .footer { padding: 1.25rem; text-align: center; font-size: 12px; color: var(--color-text-secondary); border-top: 0.5px solid var(--color-border-tertiary); }
+  .divider { height: 0.5px; background: var(--color-border-tertiary); }
+</style>
+
+<div class="hero">
+  <div class="hero-badge">Mobile &amp; Electronics Shop ERP</div>
+  <div class="logo">OK <span>ERP</span></div>
+  <h1>Aapki dukaan ka poora hisaab —<br>ek jagah, ek software mein</h1>
+  <p>Billing, inventory, staff, repairs, cashbook, WhatsApp bot —<br>sab kuch ready. Koi training ki zaroorat nahi.</p>
+  <a class="wa-btn" href="https://wa.me/919834470250?text=Hi%2C%20mujhe%20OkMoney%20ERP%20ka%2030%20day%20free%20trial%20chahiye" target="_blank">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> 30 Days FREE Trial Lo
+  </a>
+  <div class="stats-row">
+    <div class="stat"><div class="num">30 sec</div><div class="lbl">mein bill ready</div></div>
+    <div class="stat"><div class="num">8+</div><div class="lbl">powerful features</div></div>
+    <div class="stat"><div class="num">₹0</div><div class="lbl">trial mein risk</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">Software Preview</div>
+  <h2>Dekho software kaisa dikhta hai</h2>
+  <p class="sub">Real screenshots — yahi milega aapko trial mein</p>
+  <div class="ss-scroll">
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984444_WhatsApp_Image_2026-06-13_at_3_54_08_PM.jpeg" alt="POS Billing screen" />
+      <div class="ss-label"><i class="ti ti-file-invoice" aria-hidden="true"></i> POS / Billing</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984456_WhatsApp_Image_2026-06-13_at_3_53_58_PM.jpeg" alt="Inventory screen" />
+      <div class="ss-label"><i class="ti ti-package" aria-hidden="true"></i> Inventory</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984445_WhatsApp_Image_2026-06-13_at_3_54_09_PM__1_.jpeg" alt="Cashbook screen" />
+      <div class="ss-label"><i class="ti ti-book" aria-hidden="true"></i> Chat Cashbook</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984449_WhatsApp_Image_2026-06-13_at_3_54_21_PM.jpeg" alt="WhatsApp Bot screen" />
+      <div class="ss-label"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp Bot</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984446_WhatsApp_Image_2026-06-13_at_3_54_09_PM.jpeg" alt="Workers and Attendance" />
+      <div class="ss-label"><i class="ti ti-users" aria-hidden="true"></i> Workers &amp; Staff</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984456_WhatsApp_Image_2026-06-13_at_3_54_08_PM__1_.jpeg" alt="Device Repairs" />
+      <div class="ss-label"><i class="ti ti-tool" aria-hidden="true"></i> Device Repairs</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984452_WhatsApp_Image_2026-06-13_at_3_53_57_PM__1_.jpeg" alt="Dashboard" />
+      <div class="ss-label"><i class="ti ti-layout-dashboard" aria-hidden="true"></i> Dashboard</div>
+    </div>
+    <div class="ss-item">
+      <img src="/mnt/user-data/uploads/1781390984454_WhatsApp_Image_2026-06-13_at_3_53_58_PM__1_.jpeg" alt="GST Reports" />
+      <div class="ss-label"><i class="ti ti-chart-bar" aria-hidden="true"></i> GST Reports</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section features-bg">
+  <div class="section-tag">Features</div>
+  <h2>Sab kuch jo ek shop ko chahiye</h2>
+  <div class="features-grid">
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-file-invoice" aria-hidden="true"></i></div>
+      <h3>POS Billing</h3>
+      <p>30 sec mein GST bill. Cash ya online payment. WhatsApp pe receipt.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+      <h3>Inventory</h3>
+      <p>Stock track karo. Barcode scan karo. Low stock alert milega.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-tool" aria-hidden="true"></i></div>
+      <h3>Device Repairs</h3>
+      <p>Repair job track karo. Customer ko WhatsApp update bhejo automatically.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-book" aria-hidden="true"></i></div>
+      <h3>Chat Cashbook</h3>
+      <p>Kise dena hai, kisse lena hai — net position ek second mein.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div>
+      <h3>WhatsApp Bot</h3>
+      <p>Customer ko auto message — repair ready, bill, status sab.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <h3>Workers &amp; Staff</h3>
+      <p>Staff accounts banao, attendance track karo, GPS geofence.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+      <h3>Attendance</h3>
+      <p>GPS se check-in. 100m radius ke andar hi clock-in ho sakta hai.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><i class="ti ti-receipt" aria-hidden="true"></i></div>
+      <h3>GST Reports</h3>
+      <p>GST-1 report download karo Excel mein — CA ko bhejne ke liye ready.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section problems-bg">
+  <div class="section-tag">Why OK ERP</div>
+  <h2>Pehle aur ab</h2>
+  <div class="prob-list">
+    <div class="prob-item"><i class="ti ti-x ic ic-bad" aria-hidden="true"></i><span>Manual register mein bill likhna — time waste aur galtiyan</span></div>
+    <div class="prob-item"><i class="ti ti-x ic ic-bad" aria-hidden="true"></i><span>Stock kab khatam hua pata hi nahi chala</span></div>
+    <div class="prob-item"><i class="ti ti-x ic ic-bad" aria-hidden="true"></i><span>Repair ka status customer ko baar baar phone karna padta tha</span></div>
+    <div class="prob-item"><i class="ti ti-x ic ic-bad" aria-hidden="true"></i><span>Staff ki attendance ka koi record nahi</span></div>
+    <div class="prob-item"><i class="ti ti-x ic ic-bad" aria-hidden="true"></i><span>GST filing ke time CA ko data dhundhna padta tha</span></div>
+  </div>
+  <div style="margin-top: 1.5rem;">
+    <p style="font-size: 14px; font-weight: 500; margin-bottom: 0.75rem; color: var(--color-text-primary);">OK ERP ke saath ab:</p>
+    <div class="prob-list">
+      <div class="prob-item"><i class="ti ti-check ic ic-good" aria-hidden="true"></i><span>30 second mein professional GST bill — print ya WhatsApp pe</span></div>
+      <div class="prob-item"><i class="ti ti-check ic ic-good" aria-hidden="true"></i><span>Stock automatically track — low stock alert milega</span></div>
+      <div class="prob-item"><i class="ti ti-check ic ic-good" aria-hidden="true"></i><span>Repair ready hone par customer ko auto WhatsApp message</span></div>
+      <div class="prob-item"><i class="ti ti-check ic ic-good" aria-hidden="true"></i><span>GPS geofence se staff attendance automatic</span></div>
+      <div class="prob-item"><i class="ti ti-check ic ic-good" aria-hidden="true"></i><span>GST-1 Excel ek click mein download</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section testimonials-bg">
+  <div class="section-tag">Reviews</div>
+  <h2>Shop owners ka kehna hai</h2>
+  <div class="tcard">
+    <p>"Pehle bill banane mein bahut time lagta tha. Ab 30 second mein ho jaata hai aur customer ko WhatsApp pe receipt bhi chali jaati hai. Bahut badhiya software hai."</p>
+    <div class="tmeta">
+      <div class="tav">RS</div>
+      <div><div class="tname">Rahul S.</div><div class="tshop">Mobile Shop Owner</div></div>
+    </div>
+  </div>
+  <div class="tcard">
+    <p>"Repair ka kaam track karna bohot easy ho gaya. Customer khud WhatsApp pe message aata hai jab phone ready hota hai. Staff bhi GPS se attendance dete hain ab."</p>
+    <div class="tmeta">
+      <div class="tav">MK</div>
+      <div><div class="tname">Manoj K.</div><div class="tshop">Electronics Shop Owner</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="cta-section">
+  <h2>Aaj hi shuru karo — FREE mein</h2>
+  <p>30 din ka free trial. Koi payment nahi. Koi risk nahi.<br>Setup mein help bhi milegi — Hindi mein.</p>
+  <a class="wa-btn" href="https://wa.me/919834470250?text=Hi%2C%20mujhe%20OK%20ERP%20ka%2030%20day%20free%20trial%20chahiye" target="_blank">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp: 98344 70250
+  </a>
+  <div class="cta-note">okmoney.shop · Trusted by mobile &amp; electronics shop owners across India</div>
+</div>
+
+<div class="footer">
+  okmoney.shop &nbsp;·&nbsp; <a href="https://wa.me/919834470250" style="color: var(--color-text-info);">+91 98344 70250</a>
+</div>
